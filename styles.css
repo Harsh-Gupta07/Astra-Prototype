@@ -1,0 +1,67 @@
+:root {
+  --cream: #f8f3eb;
+  --navy: #0c2947;
+  --orange: #d6643b;
+  --teal: #2c7e83;
+  --line: rgba(12, 41, 71, .16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--cream); }
+body { margin: 0; background: var(--cream); color: var(--navy); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+.site-nav {
+  position: fixed;
+  inset: 14px 26px auto;
+  z-index: 10;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 18px 0 20px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 20px;
+  background: rgba(255, 253, 249, .88);
+  box-shadow: 0 12px 30px rgba(20, 41, 54, .08);
+  backdrop-filter: blur(18px);
+  transform: translateY(-110%);
+  transition: transform .35s ease, background .35s ease;
+}
+.site-nav.is-visible { transform: translateY(0); }
+.brand { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); font-size: 1.2rem; font-weight: 850; letter-spacing: -.06em; text-decoration: none; }
+.brand-mark { position: relative; display: grid; place-items: center; width: 30px; height: 34px; font-size: 1.55rem; font-weight: 900; line-height: 1; }
+.brand-mark::before { content: ""; position: absolute; top: -3px; left: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+nav { display: flex; align-items: center; justify-content: center; gap: 10px; flex: 1; }
+.nav-link { position: relative; padding: 8px 12px; color: var(--navy); font-size: .82rem; text-decoration: none; opacity: .82; transition: color .2s, opacity .2s; }
+.nav-link:hover, .nav-link.active { color: var(--orange); opacity: 1; }
+.nav-link.active::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; border-radius: 9px; background: var(--orange); }
+.nav-cta { padding: 12px 20px; border-radius: 999px; color: #fff; background: var(--orange); font-size: .82rem; font-weight: 750; text-decoration: none; box-shadow: 0 8px 18px rgba(214, 100, 59, .18); transition: transform .2s ease, background .2s ease; }
+.nav-cta:hover { transform: translateY(-2px); background: #c85732; }
+.menu-button { display: none; border: 0; background: transparent; color: var(--navy); font-size: 1.35rem; cursor: pointer; }
+
+main { width: 100%; }
+.visual-section { position: relative; min-height: 100svh; overflow: hidden; background: var(--cream); scroll-margin-top: 82px; }
+.visual-section img { display: block; width: 100%; height: auto; min-height: 100svh; object-fit: cover; object-position: center; }
+.hero { min-height: 100svh; }
+.image-hotspot { position: absolute; z-index: 2; border-radius: 999px; }
+.hero-cta { left: 4.2%; top: 68%; width: 18%; height: 7%; }
+.hero-demo { left: 24%; top: 68%; width: 17%; height: 7%; }
+.back-top { position: fixed; right: 22px; bottom: 20px; z-index: 11; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; color: var(--navy); background: rgba(255,253,249,.9); box-shadow: 0 8px 22px rgba(20,41,54,.1); opacity: 0; pointer-events: none; cursor: pointer; transition: opacity .25s, transform .25s; }
+.back-top.show { opacity: 1; pointer-events: auto; }
+.back-top:hover { transform: translateY(-3px); }
+
+@media (max-width: 900px) {
+  .site-nav { inset: 10px 12px auto; height: 56px; gap: 10px; padding: 0 12px; }
+  nav { position: absolute; top: 64px; left: 0; right: 0; display: none; flex-direction: column; gap: 2px; padding: 10px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,249,.96); box-shadow: 0 14px 28px rgba(20,41,54,.1); }
+  nav.open { display: flex; }
+  .nav-link { width: 100%; padding: 10px 14px; }
+  .nav-link.active::after { left: 14px; right: auto; width: 22px; }
+  .nav-cta { margin-left: auto; padding: 10px 15px; font-size: .75rem; }
+  .menu-button { display: block; }
+  .visual-section { min-height: 0; }
+  .visual-section img { min-height: 0; width: 100%; height: auto; object-fit: contain; }
+  .hero { padding-top: 0; }
+  .hero-cta, .hero-demo { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
