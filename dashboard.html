@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f3eb" />
+  <title>ASTRA — Dashboard</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="dash">
+    <aside class="side" id="side">
+      <a class="brand" href="index.html" aria-label="ASTRA home"><img class="brand-logo" src="assets/team-astra-logo.png" width="748" height="504" alt="Team ASTRA" /></a>
+      <nav id="side-nav" aria-label="Dashboard sections"></nav>
+      <div class="who" id="who"></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p id="role-label"></p>
+          <h1 id="greeting">Dashboard</h1>
+        </div>
+        <div class="actions">
+          <button class="btn small menu-toggle" type="button" aria-controls="side" aria-expanded="false">☰ Menu</button>
+          <span class="sync" id="sync" role="status"></span>
+          <button class="btn small" type="button" id="sync-now">Sync now</button>
+          <button class="btn small ghost" type="button" id="reset-demo" title="Restore the demo data">Reset demo</button>
+          <button class="btn small primary" type="button" id="sign-out">Sign out</button>
+        </div>
+      </header>
+      <div id="view" class="view"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="app.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
