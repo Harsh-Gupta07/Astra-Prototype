@@ -1,66 +1,102 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f8f3eb" />
-    <meta name="description" content="ASTRA keeps learning moving when connectivity stops." />
-    <title>ASTRA - Learning continuity for every student</title>
-    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="18" fill="%23f8f3eb"/%3E%3Cpath d="M12 48 30 12l22 36h-8l-5-10H25l-5 10zM29 31h7l-4-9z" fill="%230c2947"/%3E%3Ccircle cx="31" cy="8" r="4" fill="%23d6643b"/%3E%3C/svg%3E' />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-nav" id="site-nav">
-      <a class="brand" href="#home" aria-label="ASTRA home"><span class="brand-mark">A</span><span>ASTRA</span></a>
-      <nav aria-label="Primary navigation">
-        <a class="nav-link active" href="#home">Home</a>
-        <a class="nav-link" href="#learning">Learning</a>
-        <a class="nav-link" href="#ai-tutor">AI Tutor</a>
-        <a class="nav-link" href="#scholarships">Scholarships</a>
-        <a class="nav-link" href="#mentors">Mentors</a>
-        <a class="nav-link" href="#career">Career Path</a>
-      </nav>
-      <a class="nav-cta" href="#career">Get Started</a>
-      <button class="menu-button" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f3eb" />
+  <meta name="description" content="ASTRA keeps learning moving when connectivity stops." />
+  <title>ASTRA — Learning continuity for every student</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-nav" id="site-nav">
+    <a class="brand" href="#home" aria-label="ASTRA home"><img class="brand-logo" src="assets/team-astra-logo.png" width="748" height="504" alt="Team ASTRA" /></a>
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <a class="nav-link active" href="#home">Home</a><a class="nav-link" href="#learning">Learning</a><a class="nav-link" href="#ai-tutor">AI Tutor</a><a class="nav-link" href="#scholarships">Scholarships</a><a class="nav-link" href="#mentors">Mentors</a><a class="nav-link" href="#career">Career Path</a><a class="nav-link nav-signin" href="auth.html?mode=signin">Sign in</a>
+    </nav>
+    <a class="nav-cta" href="auth.html?mode=signup">Sign up</a>
+    <button class="menu-button" type="button" aria-controls="primary-nav" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </header>
 
-    <main>
-      <section class="visual-section hero" id="home" aria-label="ASTRA home page">
-        <img src="assets/home.png" alt="ASTRA homepage showing a student learning near a community hub" />
-        <a class="image-hotspot hero-cta" href="#learning" aria-label="Explore ASTRA"></a>
-        <a class="image-hotspot hero-demo" href="#learning" aria-label="See how ASTRA works"></a>
-      </section>
+  <main>
+    <section class="scene hero" id="home">
+      <img class="scene-art" src="assets/home-plate.png" width="1672" height="940" alt="Student using ASTRA beside a rural community learning hub" />
+      <div class="hero-copy">
+        <h1>Learning should continue, even when <em>the internet doesn’t.</em></h1>
+        <p>ASTRA keeps lessons, progress and guidance available offline for rural and tribal students.</p>
+        <div class="actions"><a class="button primary" href="#learning">Explore ASTRA <span>→</span></a><a class="button secondary" href="#learning"><span aria-hidden="true">▶</span> See how it works</a></div>
+      </div>
+      <ul class="hero-orbit" aria-label="ASTRA capabilities"><li>Offline lessons</li><li>Local AI</li><li>Voice</li><li>Sync</li></ul>
+      <span class="hub-sign">ASTRA<small>Community Hub</small></span>
+      <ul class="hero-strip"><li>Offline-first</li><li>Local-language support</li><li>Community-powered guidance</li></ul>
+    </section>
 
-      <section class="visual-section" id="learning" aria-label="Offline continuity layer">
-        <img src="assets/continuity.png" alt="ASTRA offline learning flow from download to later sync" loading="lazy" />
-      </section>
+    <section class="scene continuity" id="learning">
+      <img class="scene-art" src="assets/continuity-plate.png" width="1672" height="941" alt="Four-step offline learning continuity illustration" />
+      <div class="intro"><span class="eyebrow pill">Offline continuity layer</span><h2>A learning system built for real-world connectivity</h2><p>ASTRA saves the student’s learning state locally, uses nearby resources when needed, and syncs only when a connection returns.</p></div>
+      <ol class="step-row"><li><b>1</b><strong>Download once</strong></li><li><b>2</b><strong>Learn offline</strong></li><li><b>3</b><strong>Ask locally</strong></li><li><b>4</b><strong>Sync later</strong></li></ol>
+      <div class="passport"><h3>Learning State Passport</h3><p>Progress, pending doubts and the next best action travel with the student across connectivity gaps.</p></div>
+    </section>
 
-      <section class="visual-section" id="opportunity" aria-label="Learning to opportunity journey">
-        <img src="assets/opportunity.png" alt="ASTRA learning signal to support to opportunity journey" loading="lazy" />
-      </section>
+    <section class="scene opportunity" id="opportunity">
+      <img class="scene-art" src="assets/opportunity-plate-boys.jpg" width="1672" height="941" alt="A schoolboy practising in class, a mentor guiding a student, and a tribal student applying online, linked as one learning journey" />
+      <header class="center-head"><span class="eyebrow">From learning to opportunity</span><h2>Progress should open the next door.</h2><p>ASTRA connects a student’s learning state with the guidance they need next:<br>a revision plan, a verified scholarship, a trusted mentor or a clear career pathway.</p></header>
+      <div class="journey-labels"><div><h3>Learning signal</h3><p>Weak topic detected</p></div><div><h3>Right support</h3><p>Practice, mentor or explanation</p></div><div><h3>Opportunity match</h3><p>Scholarship or career pathway</p></div></div>
+      <div class="journey-ui" aria-label="Examples of ASTRA guidance">
+        <span class="quiz"><strong>Quadratic Equations</strong><small>3 / 5</small><i>a</i><i>b</i><i>c</i><i>d</i></span>
+        <span class="support-options"><span>Practice questions</span><span>Mentor session</span><span>Step-by-step explanation</span></span>
+        <span class="scholarship-offer">Scholarship offer</span>
+      </div>
+      <div class="next-action"><h3>Next Best Action</h3><p>Every session ends with one practical next step, so students are never left wondering what to do next.</p><strong>Learning State<br>Passport</strong></div>
+    </section>
 
-      <section class="visual-section" id="ai-tutor" aria-label="Local AI support">
-        <img src="assets/ai-tutor.png" alt="ASTRA local AI tutor answering a student question from local study material" loading="lazy" />
-      </section>
+    <section class="scene tutor" id="ai-tutor">
+      <img class="scene-art" src="assets/ai-tutor-plate.png" width="1672" height="941" alt="ASTRA local AI tutor interface beside a student" />
+      <div class="intro"><span class="eyebrow pill teal">Local AI support</span><h2>Turn every doubt into a next step.</h2><p>Students can ask in Hindi, English or a regional language. ASTRA searches downloaded study material first, then explains the answer in simple language.</p></div>
+      <div class="grounded"><h3>Grounded answers, even without cloud access</h3><p>RAG + local AI uses the student’s downloaded syllabus instead of guessing.</p></div>
+      <div class="chat-copy"><span class="language">Hindi</span><p class="question">Newton’s third law simple language mein samjhao.</p><p class="answer">Jab tum wall ko push karte ho, wall bhi tumhe opposite direction mein push karti hai.</p><small>Physics · Chapter 3 · Local study pack</small><span class="follow">Ask a follow-up</span></div>
+      <div class="sources"><strong>Local study material</strong><span>Physics<br>Chapter 3</span><span>Chemistry<br>Notes</span><span>Maths<br>Syllabus</span></div>
+    </section>
 
-      <section class="visual-section" id="scholarships" aria-label="Scholarship discovery">
-        <img src="assets/scholarships.png" alt="ASTRA scholarship discovery and official application journey" loading="lazy" />
-      </section>
+    <section class="scene scholarships" id="scholarships">
+      <img class="scene-art" src="assets/scholarships-plate-boys.jpg" width="1672" height="941" alt="A Gond tribal boy in traditional dress beside the scholarship discovery journey" />
+      <header class="center-head"><span class="eyebrow orange">Opportunity discovery</span><h2>Make every eligible<br>opportunity easier to find.</h2><p>ASTRA turns scattered scholarship information into a simple, verified path:<br>eligibility, required documents, deadline and official application link.</p></header>
+      <span class="verified">Verified and date-checked</span>
+      <ol class="scholar-steps"><li><b>1</b><strong>Your profile</strong></li><li><b>2</b><strong>Eligibility match</strong></li><li><b>3</b><strong>Document checklist</strong></li><li><b>4</b><strong>Official application</strong></li></ol>
+      <div class="opportunity-passport"><h3>Opportunity Passport</h3><p>A student can save scholarship progress offline and<br>continue the application when connectivity returns.</p></div>
+      <a class="button primary plate-button scholarship-cta" href="#footer">Explore scholarships <span>→</span></a>
+    </section>
 
-      <section class="visual-section" id="mentors" aria-label="Trusted mentor guidance">
-        <img src="assets/mentors.png" alt="ASTRA mentor guidance with a verified guest faculty mentor" loading="lazy" />
-      </section>
+    <section class="scene mentors" id="mentors">
+      <img class="scene-art" src="assets/mentors-plate.png" width="1672" height="941" alt="Teacher mentoring a student" />
+      <div class="intro"><span class="eyebrow">Trusted guidance</span><h2>The right mentor can change the next step.</h2><p>ASTRA connects students with verified teachers, guest faculty, alumni and trained female mentors who understand their language, subject and context.</p></div>
+      <h3 class="match-title">Mentor matching that feels personal</h3>
+      <div class="mentor-features"><div><strong>Subject fit</strong><span>Matched to the doubt</span></div><div><strong>Language fit</strong><span>Explained with clarity</span></div><div><strong>Safety first</strong><span>Verified in-platform</span></div></div>
+      <p class="offline-request">Unresolved doubts become mentor requests,<br>even when the student is offline.</p>
+      <a class="button primary plate-button mentor-cta" href="#footer">Meet the mentor network <span>→</span></a>
+      <div class="mentor-card"><strong>Guest Faculty <span class="visually-hidden">(verified)</span></strong><span>Physics · Hindi</span></div><div class="saved-card"><strong>Saved to mentor requests</strong><span>Will sync when you’re online</span></div>
+    </section>
 
-      <section class="visual-section" id="career" aria-label="Career pathways">
-        <img src="assets/career.png" alt="ASTRA career pathway from discovery to moving forward" loading="lazy" />
-      </section>
+    <section class="scene career" id="career">
+      <img class="scene-art" src="assets/career-plate.png" width="1672" height="941" alt="Career pathway winding from a village to higher education" />
+      <div class="intro"><span class="eyebrow">Career pathways</span><h2>A clearer path from learning to possibility.</h2><p>ASTRA helps students connect what they are learning today with the choices they can make tomorrow.</p></div>
+      <a class="button primary plate-button career-cta" href="#footer">Find my pathway <span>→</span></a>
+      <span class="student-built">Built around<br>the student</span>
+      <ol class="career-steps"><li><strong>Discover</strong><span>Understand your<br>interests</span></li><li><strong>Prepare</strong><span>Build the right<br>skills</span></li><li><strong>Connect</strong><span>Find mentors and<br>opportunities</span></li><li><strong>Move forward</strong><span>Choose your next step</span></li></ol>
+    </section>
 
-      <section class="visual-section footer-visual" id="footer" aria-label="ASTRA footer">
-        <img src="assets/footer.png" alt="ASTRA footer with support and exploration links" loading="lazy" />
-      </section>
-    </main>
-
-    <button class="back-top" type="button" aria-label="Back to top">↑</button>
-    <script src="script.js"></script>
-  </body>
+    <footer class="scene footer" id="footer">
+      <img class="scene-art" src="assets/footer-plate-logo.jpg" width="1672" height="941" alt="" />
+      <div class="footer-cta"><h2>Keep learning moving.</h2><a class="button primary plate-button footer-button" href="auth.html?mode=signup">Get started <span>→</span></a></div>
+      <div class="footer-brand"><img src="assets/team-astra-logo.png" width="748" height="504" alt="Team ASTRA" /><p>Learning continuity for every student,<br>wherever connectivity goes.</p></div>
+      <div class="footer-links explore"><h3>Explore</h3><a href="#learning">Learning</a><a href="#ai-tutor">AI Tutor</a><a href="#scholarships">Scholarships</a><a href="#mentors">Mentors</a><a href="#career">Career Path</a></div>
+      <div class="footer-links support"><h3>Support</h3><a href="#footer">Help centre</a><a href="#footer">Safety and privacy</a><a href="#footer">Contact us</a><a href="credits.html">Photo credits</a></div>
+      <span class="language-choice">English / हिन्दी</span>
+      <p class="footer-note">Built for rural and tribal learners&nbsp; · &nbsp;Offline-first by design</p><p class="copyright">© 2026 ASTRA. Proposed platform concept.</p>
+    </footer>
+  </main>
+  <button class="back-top" type="button" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
 </html>
