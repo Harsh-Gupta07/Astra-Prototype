@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f3eb" />
+  <title>ASTRA — Sign in or sign up</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="auth">
+    <aside class="auth-art">
+      <img src="assets/opportunity-plate-boys.jpg" alt="" />
+      <a class="brand on-dark" href="index.html" aria-label="ASTRA home"><img class="brand-logo" src="assets/team-astra-logo.png" width="748" height="504" alt="Team ASTRA" /></a>
+      <div>
+        <h1>Keep learning moving, wherever you are.</h1>
+        <ul>
+          <li>Study packs, progress and doubts saved on your phone</li>
+          <li>Trusted mentors for doubts, careers and parent counselling</li>
+          <li>Syncs automatically when a connection returns</li>
+        </ul>
+      </div>
+      <p><small>Demo prototype · accounts are stored only in this browser</small></p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <a class="back-link" href="index.html">← Back to ASTRA</a>
+        <div class="tabs" role="tablist" aria-label="Account">
+          <button type="button" role="tab" id="tab-signin" aria-controls="form-signin" aria-selected="true">Sign in</button>
+          <button type="button" role="tab" id="tab-signup" aria-controls="form-signup" aria-selected="false">Sign up</button>
+        </div>
+        <div>
+          <h2 id="auth-title">Welcome back</h2>
+          <p id="auth-sub" class="back-link">Choose your role and sign in to your dashboard.</p>
+        </div>
+
+        <fieldset class="roles" id="role-picker">
+          <legend>I am a</legend>
+          <label class="role"><input type="radio" name="role" value="student" checked /><span><b>Student</b><small>Learn offline, ask doubts</small></span></label>
+          <label class="role"><input type="radio" name="role" value="mentor" /><span><b>Mentor</b><small>Doubts, career &amp; parent counselling</small></span></label>
+          <label class="role"><input type="radio" name="role" value="admin" /><span><b>Admin</b><small>Hubs, content, verification</small></span></label>
+        </fieldset>
+
+        <form class="auth-form" id="form-signin" role="tabpanel" aria-labelledby="tab-signin" novalidate>
+          <div class="field"><label for="si-id">Email or phone</label><input id="si-id" name="id" placeholder="e.g. 98765 43210" autocomplete="username" required /></div>
+          <div class="field"><label for="si-pw">Password</label><input id="si-pw" name="password" placeholder="Enter your password" type="password" autocomplete="current-password" required /></div>
+          <p class="error" role="alert" hidden></p>
+          <button class="btn primary" type="submit">Sign in</button>
+        </form>
+
+        <form class="auth-form" id="form-signup" role="tabpanel" aria-labelledby="tab-signup" novalidate hidden>
+          <div class="field"><label for="su-name">Full name</label><input id="su-name" name="name" placeholder="e.g. Ravi Hansda" autocomplete="name" required /></div>
+          <div class="grid-2">
+            <div class="field"><label for="su-id">Email or phone</label><input id="su-id" name="id" placeholder="e.g. 98765 43210" autocomplete="username" required /></div>
+            <div class="field"><label for="su-pw">Password</label><input id="su-pw" name="password" placeholder="Create a password" type="password" autocomplete="new-password" minlength="6" required /><small>At least 6 characters</small></div>
+          </div>
+
+          <div class="grid-2" data-role="student">
+            <div class="field"><label for="su-grade">Class</label>
+              <select id="su-grade" name="grade" required><option value="" disabled selected hidden>Select your class</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option><option>College</option></select></div>
+            <div class="field"><label for="su-lang">Preferred language</label>
+              <select id="su-lang" name="language" required><option value="" disabled selected hidden>Select a language</option><option>Hindi</option><option>English</option><option>Odia</option><option>Santali</option><option>Gondi</option><option>Kurukh</option><option>Marathi</option><option>Bengali</option></select></div>
+            <div class="field"><label for="su-district">Village / district</label><input id="su-district" name="district" placeholder="e.g. Gumla, Jharkhand" /></div>
+            <div class="field"><label for="su-hub">Nearest learning hub (optional)</label><input id="su-hub" name="hub" placeholder="e.g. Gumla Community Hub" /></div>
+          </div>
+
+          <div class="grid-2" data-role="mentor" hidden>
+            <div class="field"><label for="su-mtype">Mentor type</label>
+              <select id="su-mtype" name="mentorType" required><option value="" disabled selected hidden>Select mentor type</option><option>Teacher</option><option>Guest faculty</option><option>Alumni mentor</option><option>Trained female mentor</option><option>Career counsellor</option></select></div>
+            <div class="field"><label for="su-subjects">Subjects</label><input id="su-subjects" name="subjects" placeholder="e.g. Physics, Maths" /></div>
+            <div class="field"><label for="su-langs">Languages you mentor in</label><input id="su-langs" name="languages" placeholder="e.g. Hindi, Santali" /></div>
+            <div class="field"><label for="su-help">I can also help with</label>
+              <select id="su-help" name="focus" required><option value="" disabled selected hidden>Select an area</option><option>Doubt resolution</option><option>Career counselling</option><option>Girls’ education awareness</option><option>Parent counselling</option></select></div>
+            <small class="back-link">New mentors are verified by an admin before they receive student requests.</small>
+          </div>
+
+          <div class="grid-2" data-role="admin" hidden>
+            <div class="field"><label for="su-org">Organisation or hub</label><input id="su-org" name="org" placeholder="e.g. Koraput Ashram School" /></div>
+            <div class="field"><label for="su-code">Admin access code</label><input id="su-code" name="code" placeholder="Demo code: ASTRA-ADMIN" /></div>
+          </div>
+
+          <p class="error" role="alert" hidden></p>
+          <button class="btn primary" type="submit">Create account</button>
+        </form>
+
+        <div class="demo">
+          <p>Just exploring? Open a demo dashboard (password <b>demo1234</b>):</p>
+          <div>
+            <button class="btn small" type="button" data-demo="student">Demo student</button>
+            <button class="btn small" type="button" data-demo="mentor">Demo mentor</button>
+            <button class="btn small" type="button" data-demo="admin">Demo admin</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
