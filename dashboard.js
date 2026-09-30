@@ -168,17 +168,17 @@ function adminView() {
 
         ${panel('hubs', 'Hubs & sync status', `<div class="table-wrap"><table>
           <thead><tr><th>Hub</th><th>District</th><th>Devices</th><th>Last sync</th><th>Status</th></tr></thead>
-          <tbody>${data.hubs.map((h) => `<tr><td>${esc(h.name)}</td><td>${esc(h.district)}</td><td>${h.devices}</td><td>${esc(h.lastSync)}</td><td><span class="pill ${h.health === 'Healthy' ? '' : 'warm'}">${esc(h.health)}</span></td></tr>`).join('')}</tbody>
+          <tbody>${data.hubs.map((h) => `<tr><td>${esc(h.name)}</td><td data-label="District">${esc(h.district)}</td><td data-label="Devices">${h.devices}</td><td data-label="Last sync">${esc(h.lastSync)}</td><td data-label="Status"><span class="pill ${h.health === 'Healthy' ? '' : 'warm'}">${esc(h.health)}</span></td></tr>`).join('')}</tbody>
         </table></div>`, { size: 'wide', hint: 'Local AI hubs and content caches' })}
 
         ${panel('packs', 'Content packs', `<div class="table-wrap"><table>
           <thead><tr><th>Pack</th><th>Size</th><th>Version</th><th>Installs</th><th></th></tr></thead>
-          <tbody>${data.packs.map((p) => `<tr><td>${esc(p.name)}</td><td>${p.size}</td><td>${p.version}</td><td>${p.installs.toLocaleString('en-IN')}</td><td>${p.status === 'Review' ? `<button class="btn small primary" data-action="publish" data-id="${p.id}">Publish</button>` : '<span class="pill">Published</span>'}</td></tr>`).join('')}</tbody>
+          <tbody>${data.packs.map((p) => `<tr><td>${esc(p.name)}</td><td data-label="Size">${p.size}</td><td data-label="Version">${p.version}</td><td data-label="Installs">${p.installs.toLocaleString('en-IN')}</td><td data-label="Status">${p.status === 'Review' ? `<button class="btn small primary" data-action="publish" data-id="${p.id}">Publish</button>` : '<span class="pill">Published</span>'}</td></tr>`).join('')}</tbody>
         </table></div>`, { size: 'wide', hint: 'Downloaded once, used offline, shared device-to-device' })}
 
         ${panel('users', 'Accounts in this demo', `<div class="table-wrap"><table>
           <thead><tr><th>Name</th><th>Email / phone</th><th>Role</th></tr></thead>
-          <tbody>${users.map((u) => `<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${ROLES[u.role].label}${u.role === 'mentor' && u.extra && u.extra.verified === false ? ' <span class="pill warm">Unverified</span>' : ''}</td></tr>`).join('')}</tbody>
+          <tbody>${users.map((u) => `<tr><td>${esc(u.name)}</td><td data-label="Email / phone">${esc(u.email)}</td><td data-label="Role">${ROLES[u.role].label}${u.role === 'mentor' && u.extra && u.extra.verified === false ? ' <span class="pill warm">Unverified</span>' : ''}</td></tr>`).join('')}</tbody>
         </table></div>`, { size: 'wide', hint: 'Stored only in this browser' })}
       </div>`,
   };
@@ -279,6 +279,10 @@ $('#side-nav').addEventListener('click', (event) => {
   for (const a of document.querySelectorAll('#side-nav a')) a.classList.toggle('active', a === link);
   side.classList.remove('open'); menu.setAttribute('aria-expanded', 'false');
 });
+// Tapping the dimmed page or pressing Escape closes the mobile drawer.
+const closeSide = () => { side.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); };
+document.addEventListener('click', (event) => { if (side.classList.contains('open') && !side.contains(event.target) && !menu.contains(event.target)) closeSide(); });
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeSide(); });
 
 window.addEventListener('online', () => updateSync());
 window.addEventListener('offline', () => updateSync());

@@ -30,4 +30,9 @@ navLinks.forEach((link) => link.addEventListener('click', () => {
   menuButton.setAttribute('aria-expanded', 'false');
 }));
 
+// Close the mobile menu on an outside tap or Escape.
+const closeMenu = () => { navMenu.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); };
+document.addEventListener('click', (event) => { if (navMenu.classList.contains('open') && !nav.contains(event.target)) closeMenu(); });
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+
 topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
